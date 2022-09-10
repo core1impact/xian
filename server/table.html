@@ -1,0 +1,28 @@
+<html>
+   <head>
+       <title>{{ title }}</title>
+       <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+       <meta name="viewport" content="width=device-width" />
+   </head>
+   <body>
+   count: {{ count }}
+   <table>
+       <th>platform</th>
+       <th>hostname</th>
+       <th>ip</th>
+       <th>arch</th>
+       <th>system</th>
+       <th>version</th>
+       {% for item in items %}
+        <tr>
+           <td>{{ escape(item['platform']) }}</td>
+           <td>{{ escape(item['hostname']) }}</td>
+           <td>{{ escape(item['ip']) }}</td>
+           <td>{{ escape(item['arch']) }}</td>
+           <td>{{ escape(item['sinfo']) }}</td>
+           <td>{{ escape(item['ver']) }}</td>
+        </tr>
+       {% end %}
+   </table>
+    </body>
+ </html>
